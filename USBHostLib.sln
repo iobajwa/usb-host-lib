@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBHostLib", "USBHostLib\USBHostLib.csproj", "{9897636B-BA67-44AE-947E-BA5B8A74034D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBHostLib.UnitTests", "USBHostLib.UnitTests\USBHostLib.UnitTests.csproj", "{09E72E7F-96E2-462D-8600-10090A094639}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "USBHostLib.ConsoleTests", "USBHostLib.ConsoleTests\USBHostLib.ConsoleTests.csproj", "{F1F3E85C-B937-41A5-8AEA-042F97F8878A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9897636B-BA67-44AE-947E-BA5B8A74034D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9897636B-BA67-44AE-947E-BA5B8A74034D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9897636B-BA67-44AE-947E-BA5B8A74034D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9897636B-BA67-44AE-947E-BA5B8A74034D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09E72E7F-96E2-462D-8600-10090A094639}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09E72E7F-96E2-462D-8600-10090A094639}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09E72E7F-96E2-462D-8600-10090A094639}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09E72E7F-96E2-462D-8600-10090A094639}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1F3E85C-B937-41A5-8AEA-042F97F8878A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1F3E85C-B937-41A5-8AEA-042F97F8878A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1F3E85C-B937-41A5-8AEA-042F97F8878A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1F3E85C-B937-41A5-8AEA-042F97F8878A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

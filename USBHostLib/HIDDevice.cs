@@ -100,9 +100,8 @@ namespace USBHostLib
             }
             DateTime startTime = DateTime.Now;
             TimeSpan timeOutPeriod = TimeSpan.FromMilliseconds(RequestTimeoutPeriod);
-            
-            while (!_readSucess && (DateTime.Now - startTime) < timeOutPeriod)
-                System.Threading.Thread.Sleep(1);
+
+            while (!_readSucess && (DateTime.Now - startTime) < timeOutPeriod) ;
 
             if (!_readSucess)
                 throw new TimeoutException("Read request timedout.");

@@ -15,6 +15,15 @@ namespace USBHostLib
         IHIDDevice FindDevice(UInt32 VendorID, UInt32 ProductID);
     }
 
+    /// <summary>
+    /// Exception is thrown when a USB device is not found (is not attached with the computer).
+    /// </summary>
+    public class DeviceNotFoundException : Exception
+    {
+        public DeviceNotFoundException(string message) : base(message)
+        { }
+    }
+
     public class HIDFinder : IHIDFinder
     {
         DeviceManagement _deviceManagement;
@@ -166,6 +175,9 @@ namespace USBHostLib
                     }
                     deviceFound = new HIDDevice(2000, productID, vendorID, deviceHandle, devicePathName, fileStreamForReadingDeviceData, new HIDDeviceCapabilities(hidHandle.Capabilities.InputReportByteLength, hidHandle.Capabilities.OutputReportByteLength));
                 }
+
+                if (deviceFound == null)
+                    throw new DeviceNotFoundException("No device found.");
 
                 return deviceFound;
             }

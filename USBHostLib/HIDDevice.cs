@@ -121,11 +121,10 @@ namespace USBHostLib
         {
             _inputBuffer = new byte[Capabilities.InputReportByteLength];
             _readSucess = false;
+            
             if (_deviceInputReportsStream.CanRead)
-            {
-                //_deviceInputReportsStream.ReadTimeout = RequestTimeoutPeriod;
                 _deviceInputReportsStream.BeginRead(_inputBuffer, 0, _inputBuffer.Length, new AsyncCallback(GetInputReportData), _inputBuffer);
-            }
+
             DateTime startTime = DateTime.Now;
             TimeSpan timeOutPeriod = TimeSpan.FromMilliseconds(RequestTimeoutPeriod);
 
@@ -134,7 +133,7 @@ namespace USBHostLib
             if (!_readSucess)
                 throw new TimeoutException("Read request timedout.");
 
-            return _inputBuffer;
+            return _inputBuffer.Skip(1).ToArray();
         }
 
 

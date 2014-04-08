@@ -12,14 +12,39 @@ namespace USBHostLib
 {
     public interface IHIDDevice
     {
+        /// <summary>
+        /// Product ID of Device.
+        /// </summary>
         UInt32 PID { get; }
+
+        /// <summary>
+        /// Vendor ID of Device.
+        /// </summary>
         UInt32 VID { get; }
+
+        /// <summary>
+        /// The timeperiod after which a ReadReportViaXXXX times out.
+        /// </summary>
         int RequestTimeoutPeriod { get; set; }
 
+        /// <summary>
+        /// Sends the buffer contents as report to the HID Device.
+        /// </summary>
+        /// <param name="buffer"></param>
+        /// <returns>True if written successfully, false otherwise.</returns>
         bool WriteReportViaInterruptTransfer(byte[] buffer);
+
+        /// <summary>
+        /// Reads a report from the HID Device and returns the report contents.
+        /// </summary>
+        /// <remarks>Throws TimeoutException if read takes longer time than RequestTimeoutPeriod.</remarks>
+        /// <returns>The read data contents.</returns>
         byte[] ReadReportViaInterruptTransfer();
     }
 
+    /// <summary>
+    /// Class represents the Capabilities of a HID Device.
+    /// </summary>
     public class HIDDeviceCapabilities
     {
         public Int16 InputReportByteLength { get; set; }
@@ -32,6 +57,9 @@ namespace USBHostLib
         }
     }
 
+    /// <summary>
+    /// Class represents a HID Device.
+    /// </summary>
     public class HIDDevice : IHIDDevice
     {
         public UInt32 PID { get; private set; }
